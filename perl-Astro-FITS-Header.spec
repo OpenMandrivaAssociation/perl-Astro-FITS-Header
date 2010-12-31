@@ -12,7 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Test::More)
-BuildRequires: perl(Module::Install)
+BuildRequires: perl(Module::Build)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
