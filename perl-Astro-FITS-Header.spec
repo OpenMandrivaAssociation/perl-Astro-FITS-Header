@@ -1,5 +1,5 @@
 %define upstream_name    Astro-FITS-Header
-%define upstream_version 3.01
+%define upstream_version 3.02
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -12,6 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Test::More)
+BuildRequires: perl(Module::Install)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -24,16 +25,15 @@ FITS header cards as input.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-%make test
+./Build test
 
 %install
 rm -rf %buildroot
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %buildroot
