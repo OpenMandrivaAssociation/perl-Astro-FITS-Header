@@ -1,2 +1,4 @@
+removed_sources:
+  Astro-FITS-Header-3.05.tar.gz: fff7bf500a30c6a1ec2b7f74572107dc7326c7cf
 sources:
-  "Astro-FITS-Header-3.05.tar.gz": fff7bf500a30c6a1ec2b7f74572107dc7326c7cf
+  Astro-FITS-Header-3.07.tar.gz: 1da071b3e8b4c8af6b080c734b368e98dce06bca

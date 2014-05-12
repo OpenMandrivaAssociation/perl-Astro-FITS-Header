@@ -5,12 +5,13 @@
 %endif
 
 %define upstream_name    Astro-FITS-Header
-%define upstream_version 3.05
+%define upstream_version 3.07
 
 Summary:	Interface to FITS headers
+
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	10
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -41,4 +42,5 @@ FITS header cards as input.
 %doc META.yml README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
