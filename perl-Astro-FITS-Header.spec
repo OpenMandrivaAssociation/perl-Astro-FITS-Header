@@ -19,6 +19,7 @@ Source0:	http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{upstream
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(JSON::PP)
 
 %description
 Stores information about a FITS header block in an object. Takes an hash
