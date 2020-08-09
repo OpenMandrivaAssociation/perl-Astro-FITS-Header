@@ -17,6 +17,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
+BuildRequires:  perl-devel
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(JSON::PP)
