@@ -1,17 +1,13 @@
-%if %{_use_internal_dependency_generator}
-%define __noautoreq 'perl\\(Starlink::AST\\)|perl\\(NDF\\)|perl\\(Astro::FITS::CFITSIO\\)|perl\\(GSD\\)'
-%else
-%define _requires_exceptions Starlink::AST\\|NDF|Astro::FITS::CFITSIO\\|GSD
-%endif
+%{?perl_default_filter}
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}|perl\\((GSD!NDF|Starlink::AST)\\)
 
 %define upstream_name    Astro-FITS-Header
 %define upstream_version 3.07
 
 Summary:	Interface to FITS headers
-
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Release:	9
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -31,7 +27,7 @@ FITS header cards as input.
 %setup -qn %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
+perl Build.PL installdirs=vendor
 ./Build
 
 %check
@@ -44,5 +40,3 @@ FITS header cards as input.
 %doc META.yml README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
-
