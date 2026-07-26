@@ -2,16 +2,14 @@
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}|perl\\((GSD!NDF|Starlink::AST)\\)
 
 %define upstream_name    Astro-FITS-Header
-%define upstream_version 3.07
-
 Summary:	Interface to FITS headers
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	10
+Version:	3.07
+Release:	11
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Astro/%{upstream_name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:  perl-devel
 BuildRequires:	perl(Test::More)
@@ -24,7 +22,7 @@ with an array reference as an arguement. The array should contain a list of
 FITS header cards as input.
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%setup -qn %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor
