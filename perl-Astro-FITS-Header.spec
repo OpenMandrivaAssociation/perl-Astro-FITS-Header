@@ -4,8 +4,8 @@
 %define upstream_name    Astro-FITS-Header
 Summary:	Interface to FITS headers
 Name:		perl-%{upstream_name}
-Version:	3.07
-Release:	11
+Version:	3.09
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{upstream_name}
@@ -22,7 +22,7 @@ with an array reference as an arguement. The array should contain a list of
 FITS header cards as input.
 
 %prep
-%setup -qn %{upstream_name}-%{version}
+%setup -qn %{upstream_name}-%{version} -n Astro-FITS-Header-3.09
 
 %build
 perl Build.PL installdirs=vendor
